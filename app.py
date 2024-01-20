@@ -2,8 +2,10 @@ from dash import html, dcc, Dash, Input, Output, callback
 from dash import dash_table
 
 import dash_ag_grid as dag
-from create_db import *
+from models import *
+import pandas as pd
 
+#Создание таблицы
 def create_app():
     services = Services.select()
     status = Status.select()
@@ -12,6 +14,7 @@ def create_app():
     df_services = pd.DataFrame(list(services.dicts()))
 
     app = Dash("DataBase")
+
     table_2_dict = dict(map(lambda i,j : (i,j) , df_status.columns[1:-1],
     ["Название сервиса", "Образ", "Версия", "Дата обновления"]))
 
@@ -26,16 +29,21 @@ def create_app():
             {
             "field": i, 
             "headerName":table_2_dict[i], 
-            "sortable": True if i=="service_name" else False
+            "sortable": True if i=="service_name" else False,
             } 
             for i in df_status.columns[1:-1]
         ],
         columnSize="sizeToFit",
+        style = {'height':'100vh'}
 
     )
     dropDown_Services = dcc.Dropdown(df_services.service_name,id='service-name-dropdown')
 
-    input_ = dcc.Input(id='my-input', type='text')
+    input_ = dcc.Input(
+        id='my-input', 
+        type='text',
+        )
+
 
 
 
@@ -60,6 +68,5 @@ def create_app():
 
 
 if __name__ == '__main__':
-    create_db(db)
     app = create_app()
     app.run(debug=True)

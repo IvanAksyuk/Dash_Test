@@ -2,7 +2,7 @@ from models import *
 import pandas as pd
 
 
-
+#Заполнение базы данных
 def create_db(db):
     with db:
         try:
@@ -22,7 +22,6 @@ def create_db(db):
         list_of_dicts2 = df_status.to_dict('records')
         
         Status.insert_many(list_of_dicts2).execute()
-
 
 
 
