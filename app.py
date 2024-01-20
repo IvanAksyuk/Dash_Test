@@ -30,6 +30,7 @@ def create_app():
             } 
             for i in df_status.columns[1:-1]
         ],
+        columnSize="sizeToFit",
 
     )
     dropDown_Services = dcc.Dropdown(df_services.service_name,id='service-name-dropdown')
