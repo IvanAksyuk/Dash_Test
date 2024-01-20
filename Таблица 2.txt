@@ -1,0 +1,33 @@
+economics	100.111.30.10:7106	stabletest-0.0.88	08-09-2023 04:50:363
+LogisticsOptimizationEngine	100.111.30.12:7133	0.1.51-deploytest	18-07-2023 15:35:34
+marsforecast	100.111.30.12:7140	0.0.33-stabletest	28-10-2023 21:34:06
+Mars	100.111.30.12:7310	stabletest-0.1.51	03-09-2023 10:17:43
+HydrodynamicObjectManage	100.111.30.12:7313	1.0.12-stabletest	04-07-2023 07:28:32
+StartPage	100.111.30.12:7390	stabletest-0.0.3	06-07-2023 11:19:08
+header-mfe	100.111.30.10:7139	stabletest-0.0.8	08-01-2024 00:41:29
+AdminPanel	100.111.30.10:7310	stabletest-0.0.15	17-11-2023 06:06:48
+Darcyplot	 отключен	 f241fbf7-6128-4951-a104-9eeb804165f2	bafb263f	11-10-2023 07:04:37
+PyFaas	100.111.30.12:7087	16.0.7.2-stabletest-	22-10-2023 10:30:39
+GanttChart	100.111.30.10:7137	stabletest-0.0.34	07-08-2023 22:20:10
+BIConsole	100.111.30.10:7333	stabletest-0.0.12	19-03-2023 18:18:25
+Logs-mfe	100.111.30.10:7394	stabletest-0.0.2	28-06-2023 03:17:36
+well-location-justification	100.111.30.12:7309	stabletest-0.0.1	07-03-2023 09:10:38
+Cube-Manager	100.111.30.10:7114	1.1.55-stabletest	07-02-2023 22:41:23
+LTPSIntegration	100.111.30.11:7128	1.0.50-stabletest	03-02-2023 02:35:45
+WebDataFlow	100.111.30.10:7130	stabletest-0.0.67	11-06-2023 18:27:06
+Module	100.111.30.12:7314	stabletest-0.0.5	28-07-2023 05:56:21
+Filter	100.111.30.10:7136	stabletest-0.0.37	11-02-2023 01:19:08
+Map	100.111.30.10:7138	stabletest-0.0.17	24-04-2023 03:08:58
+python ggdm server	100.111.30.10:7131	0.0.13-stabletest	21-02-2023 18:14:57
+CubeStore	100.111.30.12:7103	1.0.8-stabletest	19-02-2023 23:20:32
+geonavigation	100.111.30.10:7307	stabletest-0.0.2	26-08-2023 15:34:20
+Infrastructure	100.111.30.10:7102	stabletest-0.0.8	08-10-2023 02:23:29
+TaskManager	100.111.30.12:7331	1.0.71-stabletest	17-01-2023 19:06:39
+TitleListParser	100.111.30.11:7111	1.1.14-stabletest	15-08-2023 05:41:57
+ScheduleService	100.111.30.12:7134	0.0.25	18-11-2023 01:34:46
+Parser Fact Capstroy	100.111.30.11:17303	latest	04-07-2023 19:10:51
+VFlowCore	 отключен	 1d874449	17-10-2023 11:18:46
+ObjectCardConstructor	 отключен	stabletest-0.0.11	13-11-2023 16:44:43
+Eventlogstore	отключен	1.0.1-stabletest	14-08-2023 03:05:20
+ExcelExtractor	 отключен	 0.0.25-stabletest	19-01-2023 11:45:04
+Generated Resources	100.111.30.12:7126	common-test	16-04-2023 01:03:40

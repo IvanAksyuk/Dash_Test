@@ -1,0 +1,35 @@
+TaskManager
+LTPSIntegration
+LogisticsOptimizationEngine
+PyFaas
+CubeStore
+AdminPanel
+marsforecast
+Main
+BIConsole
+Minio
+economics
+Generated Resources
+geonavigation
+python ggdm server
+HydrodynamicObjectManage
+Module
+Infrastructure
+Mars
+ObjectCardConstructor
+TitleListParser
+ScheduleService
+StartPage
+VFlowCore
+WebDataFlow
+well-location-justification
+Filter
+GanttChart
+Map
+header-mfe
+ExcelExtractor
+card-viever
+Cube-Manager
+Parser Fact Capstroy
+Logs-mfe
+Eventlogstore
