@@ -2,8 +2,8 @@ from dash import html, dcc, Dash, Input, Output, callback
 from dash import dash_table
 
 import dash_ag_grid as dag
-from models import *
-import pandas as pd
+from create_db import *
+
 
 #Создание таблицы
 def create_app():
@@ -68,5 +68,10 @@ def create_app():
 
 
 if __name__ == '__main__':
-    app = create_app()
+    try:
+        app = create_app()
+    except: 
+        create_db()
+        app = create_app()
+
     app.run(debug=True)
