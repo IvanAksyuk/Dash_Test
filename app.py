@@ -39,7 +39,7 @@ def create_app():
     )
     dropDown_Services = dcc.Dropdown(df_services.service_name,id='service-name-dropdown')
 
-    input_ = dcc.Input(
+    dash_input = dcc.Input(
         id='my-input', 
         type='text',
         )
@@ -48,7 +48,7 @@ def create_app():
 
 
     app.layout = html.Div(
-        [input_,
+        [dash_input,
         dagTable_Status]
         
     )
@@ -58,10 +58,12 @@ def create_app():
         Input('my-input', 'value'))
     def update_data_table(selected_service):
         if selected_service is None: selected_service=""
-        return df_status[df_status.service_name
+        return df_status[ [
+            selected_service.replace(" ","").lower() in name
+            for name in df_status.service_name
             .str.replace(" ","")
-            .str.lower()
-            .str.startswith(selected_service.replace(" ","").lower())].to_dict('records')
+            .str.lower()]
+            ].to_dict('records')
         
 
     return app
@@ -74,4 +76,4 @@ if __name__ == '__main__':
         create_db()
         app = create_app()
 
-    app.run(debug=False)
+    app.run(debug=True)
