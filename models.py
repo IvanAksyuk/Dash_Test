@@ -4,21 +4,18 @@ db = SqliteDatabase('DataBaseTest.db')
 
 class BaseModel(Model):
     id = PrimaryKeyField(unique=True)
-
+    service_name = CharField()
     class Meta:
         database = db
         order_by = 'id'
 
 class Services(BaseModel):
-   
-    service_name = CharField()
 
     class Meta:
         db_table = 'Services'
 
 class Status(BaseModel):
     
-    service_name = CharField()
     form = CharField()
     version = CharField()
     date = DateField()
