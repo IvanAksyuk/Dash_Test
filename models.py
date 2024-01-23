@@ -4,7 +4,7 @@ db = SqliteDatabase('DataBaseTest.db')
 
 class BaseModel(Model):
     id = PrimaryKeyField(unique=True)
-    service_name = CharField()
+    service_name = CharField(column_name='Название сервиса')
     class Meta:
         database = db
         order_by = 'id'
@@ -16,9 +16,9 @@ class Services(BaseModel):
 
 class Status(BaseModel):
     
-    form = CharField()
-    version = CharField()
-    date = DateField()
+    form = CharField(column_name='Образ')
+    version = CharField(column_name='Версия')
+    date = DateField(column_name='Дата обновления')
     services_id = ForeignKeyField(Services)
 
     class Meta:
