@@ -4,9 +4,11 @@ from dash import dash_table
 import dash_ag_grid as dag
 from create_db import *
 
+cols_names = ['service_name', 'form', 'version','date']
 
 #Создание таблицы
 def create_app():
+    
     services = Services.select()
     status = Status.select()
 
@@ -19,7 +21,7 @@ def create_app():
     ["Название сервиса", "Образ", "Версия", "Дата обновления"]))
 
    
-
+    
     
     dagTable_Status = dag.AgGrid(
         id = 'data-dagtable',
@@ -37,6 +39,7 @@ def create_app():
         style = {'height':'100vh'}
 
     )
+
     dropDown_Services = dcc.Dropdown(df_services.service_name,id='service-name-dropdown')
 
     dash_input = dcc.Input(
@@ -52,22 +55,28 @@ def create_app():
         dagTable_Status]
         
     )
+    
 
-    @callback(
+    return app
+
+@callback(
         Output('data-dagtable', 'rowData'),
-        Input('my-input', 'value'))
-    def update_data_table(selected_service):
+        Input('my-input', 'value'),
+        Input('data-dagtable','rowData'))
+def update_data_table(selected_service, df_status_dict):
+        
+        df_status = pd.DataFrame((df_status_dict), columns = cols_names)
+        
         if selected_service is None: selected_service=""
+        
+        if(selected_service==""):
+            return pd.DataFrame(list(Status.select().dicts()), columns = cols_names).to_dict('records')
         return df_status[ [
             selected_service.replace(" ","").lower() in name
             for name in df_status.service_name
             .str.replace(" ","")
             .str.lower()]
             ].to_dict('records')
-        
-
-    return app
-
 
 if __name__ == '__main__':
     try:
@@ -75,5 +84,11 @@ if __name__ == '__main__':
     except: 
         create_db()
         app = create_app()
+    
+    service_local_id_ = 1
+    services_id_ = Status.get(Status.id == service_local_id_).services_id
+    #print(services_id_)
 
+    answer = Services.get(Services.id == services_id_).service_name
+    #print(answer)
     app.run(debug=True)
